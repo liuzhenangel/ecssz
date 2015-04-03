@@ -18,15 +18,11 @@ $(document).on 'ready, page:change', ->
     $('#article_content').show()
     false
 
-  $('#upload-photo').click ->
-    $("input[type=file]").show().focus().click().hide()
-    false
-
-  opt =
+  op =
     type: 'POST'
-    url: "/photos"
+    url: '/photos'
     success: (data,status,xhr)->
-      txtBox = $("#article_content")
+      txtBox = $('#article_content')
       caret_pos = txtBox.caret('pos')
       src_merged = "\n" + data + "\n"
       source = txtBox.val()
@@ -35,4 +31,22 @@ $(document).on 'ready, page:change', ->
       txtBox.caret('pos',caret_pos + src_merged.length)
       txtBox.focus()
 
-  $('input[type=file]').fileUpload opt
+  $('#upload-photo').click ->
+    $(".file-window").show().focus().click().hide()
+    $('.file-window').fileUpload op
+    false
+
+  opt =
+    type: 'POST'
+    url: '/main_photo'
+    success: (data,status,xhr)->
+      if $('.show-main-photo').length == 0
+        $('<img class="show-main-photo">').attr('src', data['img']).appendTo($('.article-photo'))
+      else
+        $('.show-main-photo').attr('src', data['img'])
+      $('#main_photo_id').val(data['photo_id'])
+
+  $('#upload-main-photo').click ->
+    $(".file-main-photo").show().focus().click().hide()
+    $('.file-main-photo').fileUpload opt
+    false

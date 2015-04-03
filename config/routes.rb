@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :comments
   post '/preview', to: 'admin/posts#preview'
   post '/photos', to: 'admin/posts#photos'
+  post '/main_photo', to: 'admin/posts#main_photo'
 
   post '/search', to: 'articles#search'
   get  '/search', to: 'articles#search'
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   post '/signin', to: 'admin/sessions#create'
   get '/signin', to: 'admin/sessions#new'
   get '/signout', to: 'admin/sessions#destroy'
+
+  get '/admin', to: 'admin/posts#index'
 
   get '/blog/rss', to: 'welcome#rss'
   get '/about', to: 'welcome#about'

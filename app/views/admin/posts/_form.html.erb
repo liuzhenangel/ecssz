@@ -1,0 +1,36 @@
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>
+<%= form_for @article, url: @article.new_record? ? admin_posts_path : admin_post_path, method: @article.new_record? ? :post : :patch do |f| %>
+  <%= hidden_field_tag 'main_photo_id', @main_photo.id %>
+  <p class='article-title'>
+    <%= f.label '标题' %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p class='article-photo'>
+    <%= f.label '封面' %>
+    <a href='#' id='upload-main-photo'>上传</a>
+    <input type='file' class='file-main-photo'>
+    <% unless @article.new_record? %>
+      <%= image_tag(@main_photo.image.url, class: 'show-main-photo') %>
+    <% end %>
+  </p>
+  <div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+      <li class='content-title active'><%= link_to '内容', '#' %></li>
+      <li class="preview-title"><%= link_to '预览', '#' %></li>
+      <a href="#" class='pull-right' id="upload-photo">插入图片</a>
+      <input type='file' class='file-window'>
+    </ul>
+    <%= f.text_area :content %>
+    <div class='markdown-body'></div>
+  </div>
+  <p>
+    <%= f.submit '发表' %>
+  </p>
+<% end %>

@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
   has_many :comments
+  has_one :main_photo
 
   validates :title, :content, presence: true
 

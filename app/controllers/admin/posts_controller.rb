@@ -53,12 +53,12 @@ class Admin::PostsController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @main_photo = MainPhoto.find(params[:main_photo_id])
     if @article.save
-      photo = MainPhoto.find(params[:main_photo_id])
-      photo.update(article_id: @article.id)
+      @main_photo.update(article_id: @article.id)
       redirect_to @article
     else
-      flash.now[:error] = '新增博客失败'
+      flash.now[:error] = '新增文章失败'
       render :new
     end
   end

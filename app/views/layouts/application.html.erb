@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Charity</title>
+  <title>SZ EXPLORE CREATE SHARE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav class='disktop-nav'>
+  <ul class='nav nav-pills nav-justified'>
+    <li class='charity-logo'>
+      <div class="search-field">
+        <a href='#' class='search-pic'><%= image_tag('search.gif') %></a>
+        LOGO
+      </div>
+    </li>
+    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>关于我们</h6></a></li>
+    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>我们的团队</h6></a></li>
+    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>我们的历史</h6></a></li>
+    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>媒体</h6></a></li>
+    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>加入我们</h6></a></li>
+    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>ASK ME ANYTHING</h6></a></li>
+    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>ARCHIVE</h6></a></li>
+    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>关于网站</h6></a></li>
+  </ul>
+</nav>
 <%= yield %>
-
+<div class='page-footer'>
+  <div>
+    <span class='link'>liuzhen.me</span>
+    <span class='time'>© 2015 - 2015</span>
+  </div>
+  <div class='license'>
+    <span>
+      <a href='http://liuzhen.me' target='_blank'>Rina's Blog</a>
+    </span>
+  </div>
+</div>
 </body>
 </html>

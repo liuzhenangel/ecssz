@@ -1,0 +1,43 @@
+.social {
+  position: fixed;
+  top: 50%;
+  width: 55px;
+  right: 0;
+}
+
+.social .builtin-icons {
+}
+
+.search-pic {
+  padding-right: 15px;
+}
+
+.disktop-nav {
+  position: fixed;
+}
+
+.disktop-name{
+  color: #000;
+  font-size: 14px;
+}
+
+.page-footer{
+  border-top: 1px solid #dddddd;
+  padding: 1rem 3rem 2rem;
+  text-align: right;
+}
+
+.page-footer .link {
+  margin-right: 1rem;
+}
+
+.page-footer .license {
+  margin-top: 1rem;
+}
+
+.disktop-nav li {
+  background-color: #E2E2E2;
+  opacity: 0.7;
+  text-align: center;
+  border-top: 15px;
+}

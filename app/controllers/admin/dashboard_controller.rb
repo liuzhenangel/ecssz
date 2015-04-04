@@ -12,5 +12,6 @@ class Admin::DashboardController < ApplicationController
   def index
     @articles = Article.all.size
     @comments = Comment.all.size
+    @likes = Like.all.size
   end
 end

@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id]).to_html
+    @likes = @article.liked_count
     @comment = Comment.new
     @comments = @article.comments.order(created_at: :desc)
   end

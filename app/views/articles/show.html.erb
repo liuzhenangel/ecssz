@@ -1,6 +1,17 @@
-<div class='container'>
+<div class='container' style='width: 50%'>
   <h2 class='rina-title'><%= @article.title %></h2>
-  <div class='content markdown'><%= sanitize @article.content %></div>
+  <div class='content markdown'>
+    <%= sanitize @article.content %>
+  </div>
+  <div class='btn-like'>
+     <%= hidden_field_tag 'article_id', @article.id %>
+    <button class='btn btn-danger', id='is_not_like'>
+      <p><span class='is_not_like_count'><%= @likes %></span>喜欢</p>
+    </button>
+    <button class='btn btn-info', id='is_like'>
+      <p><span class='is_like_count'><%= @likes %></span>喜欢</p>
+    </button>
+  </div>
   <div class='create-comment'>
     <%= render 'message/flash' %>
     <%= form_for @comment, url: comments_path(article_id: @article.id) do |f| %>

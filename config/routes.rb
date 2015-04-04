@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :articles
+  resources :likes
   resources :comments
   post '/preview', to: 'admin/posts#preview'
   post '/photos', to: 'photos#create'

@@ -1,12 +1,11 @@
 class CommentsController < ApplicationController
-  def index
-  end
+  layout 'admin'
 
   def create
+    comment = Comment.new(comment_params.merge(article_id: params[:article_id]))
     @article = Article.find(params[:article_id]).to_html
-    @comment = Comment.new(comment_params.merge(article_id: params[:article_id]))
     @comments = @article.comments.order(created_at: :desc)
-    if !@comment.save
+    if !comment.save
       flash[:error] = '添加评论失败'
       render 'articles/show'
     else

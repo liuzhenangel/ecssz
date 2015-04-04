@@ -8,18 +8,6 @@ class Admin::PostsController < ApplicationController
     end
   end
 
-  def photos
-    @photo = Photo.new(image: params["Filedata"])
-    @photo.save!
-    render :text=> "![](#{@photo.image.url})"
-  end
-
-  def main_photo
-    @mainphoto = MainPhoto.new(image: params["Filedata"])
-    @mainphoto.save!
-    render json: { :img => @mainphoto.image.url, :photo_id => @mainphoto.id }
-  end
-
   def preview
     html = Markdown.new(params[:body]).to_html
     render text: html

@@ -1,0 +1,18 @@
+<%= render 'message/flash' %>
+<h1><%= @article.title %></h1>
+<table class="table table-condensed">
+  <th>名称</th>
+  <th>邮箱</th>
+  <th>内容</th>
+  <th>时间</th>
+  <th>管理</th>
+  <% @comments.each do |c| %>
+    <tr>
+      <td><%= c.username %></td>
+      <td><%= c.email %></td>
+      <td><%= c.message %></td>
+      <td><%= c.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+      <td><%= link_to '回复', article_path(@article) %> | <%= link_to "删除", admin_comment_path(c, article_id: @article), method: :delete, data: { confirm: "确认删除?" } %></td>
+    </tr>
+  <% end %>
+</table>

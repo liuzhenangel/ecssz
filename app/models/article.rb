@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
-  has_many :comments
-  has_one :main_photo
+  has_many :comments, dependent: :destroy
+  has_one :main_photo, dependent: :destroy
 
   validates :title, :content, presence: true
 

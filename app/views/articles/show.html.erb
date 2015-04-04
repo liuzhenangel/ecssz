@@ -1,38 +1,40 @@
-<h2 class='rina-title'><%= @article.title %></h2>
-<div class='content markdown'><%= sanitize @article.content %></div>
-<div class='create-comment'>
-  <%= render 'message/flash' %>
-  <%= form_for @comment, url: comments_path(article_id: @article.id) do |f| %>
+<div class='container'>
+  <h2 class='rina-title'><%= @article.title %></h2>
+  <div class='content markdown'><%= sanitize @article.content %></div>
+  <div class='create-comment'>
+    <%= render 'message/flash' %>
+    <%= form_for @comment, url: comments_path(article_id: @article.id) do |f| %>
+      <div class='form-group'>
+      <%= f.text_area :message, rows: '3', class: 'form-control', placeholder: '留言...' %>
+    </div>
     <div class='form-group'>
-    <%= f.text_area :message, rows: '3', class: 'form-control', placeholder: '留言...' %>
-  </div>
-  <div class='form-group'>
-    <%= f.text_field :username, class: 'form-control form-comment', placeholder: '你的名字' %>
-  </div>
-  <div class='form-group'>
-    <%= f.text_field :email, class: 'form-control form-comment', placeholder: '邮箱' %>
-  </div>
-  <div class='form-group'>
-    <%= f.submit '提交', class: 'btn btn-default' %>
-  </div>
-<% end %>
-</div>
-<div class='form-group'>
-  <% @comments.each_with_index do |comment, index| %>
-    <% if index == 0 %>
-      <div class='comment-diag'>
-    <% end %>
-      <div class='comment-wrapper'>
-        <p class='name'>
-          <%= comment.username %>  •
-          <span class='created-at'><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></span>
-        </p>
-        <p class='comment-content'>
-          <%= comment.message %>
-        </p>
-      </div>
-    <% if index == 0 %>
-      </div>
-    <% end %>
+      <%= f.text_field :username, value: cookies[:username], class: 'form-control form-comment', placeholder: '你的名字' %>
+    </div>
+    <div class='form-group'>
+      <%= f.text_field :email, value: cookies[:email], class: 'form-control form-comment', placeholder: '邮箱' %>
+    </div>
+    <div class='form-group'>
+      <%= f.submit '提交', class: 'btn btn-default' %>
+    </div>
   <% end %>
+  </div>
+  <div class='form-group'>
+    <% @comments.each_with_index do |comment, index| %>
+      <% if index == 0 %>
+        <div class='comment-diag'>
+      <% end %>
+        <div class='comment-wrapper'>
+          <p class='name'>
+            <%= comment.username %>  •
+            <span class='created-at'><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+          </p>
+          <p class='comment-content'>
+            <%= comment.message %>
+          </p>
+        </div>
+      <% if index == 0 %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>

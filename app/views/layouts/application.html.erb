@@ -8,24 +8,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class='disktop-nav'>
-  <ul class='nav nav-pills nav-justified'>
-    <li class='charity-logo'>
-      <div class="search-field">
-        <a href='#' class='search-pic'><%= image_tag('search.gif', class: 'search') %></a>
-        LOGO
-      </div>
-    </li>
-    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>关于我们</h6></a></li>
-    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>我们的团队</h6></a></li>
-    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>我们的历史</h6></a></li>
-    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>媒体</h6></a></li>
-    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>加入我们</h6></a></li>
-    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>ASK ME ANYTHING</h6></a></li>
-    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>ARCHIVE</h6></a></li>
-    <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>关于网站</h6></a></li>
-  </ul>
-</nav>
+<div class='disktop-div'>
+  <nav class='disktop-nav'>
+    <ul class='nav nav-pills nav-justified'>
+      <li class='charity-logo'>
+        <div class="search-field">
+          <a href='#' class='search-pic'><%= image_tag('search.gif', class: 'search') %></a>
+          LOGO
+        </div>
+      </li>
+      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>关于我们</h6></a></li>
+      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>我们的团队</h6></a></li>
+      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>我们的历史</h6></a></li>
+      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>媒体</h6></a></li>
+      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>加入我们</h6></a></li>
+      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>ASK ME ANYTHING</h6></a></li>
+      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>ARCHIVE</h6></a></li>
+      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>关于网站</h6></a></li>
+    </ul>
+  </nav>
+</div>
 <%= yield %>
 <div class='page-footer'>
   <div>

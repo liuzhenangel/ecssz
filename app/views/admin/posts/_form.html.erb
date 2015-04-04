@@ -1,11 +1,4 @@
-<% flash.each do |name, msg| %>
-  <% if msg.is_a?(String) %>
-    <div class="alert alert-danger alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <%= msg %>
-    </div>
-  <% end %>
-<% end %>
+<%= render 'message/flash' %>
 <%= form_for @article, url: @article.new_record? ? admin_posts_path : admin_post_path, method: @article.new_record? ? :post : :patch do |f| %>
   <%= hidden_field_tag 'main_photo_id', @main_photo.id %>
   <p class='article-title'>

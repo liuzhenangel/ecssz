@@ -1,14 +1,7 @@
 <h2 class='rina-title'><%= @article.title %></h2>
 <div class='content markdown'><%= sanitize @article.content %></div>
 <div class='create-comment'>
-  <% flash.each do |name, msg| %>
-    <% if msg.is_a?(String) %>
-      <div class="alert alert-<%= name == 'error' ? 'danger' : 'info' %> alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= msg %>
-  </div>
-<% end %>
-<% end %>
+  <%= render 'message/flash' %>
   <%= form_for @comment, url: comments_path(article_id: @article.id) do |f| %>
     <div class='form-group'>
     <%= f.text_area :message, rows: '3', class: 'form-control', placeholder: '留言...' %>

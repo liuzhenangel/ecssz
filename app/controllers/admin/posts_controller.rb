@@ -53,12 +53,18 @@ class Admin::PostsController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    if params[:main_photo_id].blank?
+      @main_photo = MainPhoto.new
+      flash.now[:error] = '未上传封面'
+      render :new
+      return
+    end
     @main_photo = MainPhoto.find(params[:main_photo_id])
     if @article.save
       @main_photo.update(article_id: @article.id)
       redirect_to @article
     else
-      flash.now[:error] = '新增文章失败'
+      flash.now[:error] = '新增文章失败: 内容或标题错误'
       render :new
     end
   end

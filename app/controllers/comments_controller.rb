@@ -1,14 +1,13 @@
 class CommentsController < ApplicationController
-  layout 'admin'
 
   def create
-    comment = Comment.new(comment_params.merge(article_id: params[:article_id]))
+    @comment = Comment.new(comment_params.merge(article_id: params[:article_id]))
     @article = Article.find(params[:article_id]).to_html
     @comments = @article.comments.order(created_at: :desc)
-    cookies[:username] = comment[:username]
-    cookies[:email] = comment[:email]
+    cookies[:username] = @comment[:username]
+    cookies[:email] = @comment[:email]
 
-    if !comment.save
+    if !@comment.save
       flash[:error] = '添加评论失败'
       render 'articles/show'
     else

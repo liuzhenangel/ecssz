@@ -1,6 +1,6 @@
 <%= render 'message/flash' %>
 <%= form_for @article, url: @article.new_record? ? admin_posts_path : admin_post_path, method: @article.new_record? ? :post : :patch do |f| %>
-  <%= hidden_field_tag 'main_photo_id', @main_photo.id %>
+  <%= hidden_field_tag 'main_photo_id', @main_photo.try(:id) %>
   <p class='article-title'>
     <%= f.label '标题' %><br>
     <%= f.text_field :title %>
@@ -9,7 +9,7 @@
     <%= f.label '封面' %>
     <a href='#' id='upload-main-photo'>上传</a>
     <input type='file' class='file-main-photo'>
-    <% unless @main_photo.new_record? %>
+    <% unless ! @main_photo || @main_photo.new_record? %>
       <%= image_tag(@main_photo.image.url, class: 'show-main-photo') %>
     <% end %>
   </p>

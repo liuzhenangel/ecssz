@@ -14,7 +14,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order(created_at: :desc)
   end
 
   def edit
@@ -25,9 +25,11 @@ class Admin::PostsController < ApplicationController
   def update
     @article = Article.find(params[:id])
     @article.update(article_params)
-    @article.main_photo.destroy
     photo = MainPhoto.find(params[:main_photo_id])
-    photo.update(article_id: @article.id)
+    if check_main_photo_multiple(@article.main_photo, photo)
+      @article.main_photo.destroy
+      photo.update(article_id: @article.id)
+    end
     redirect_to @article.to_html
   end
 
@@ -41,13 +43,13 @@ class Admin::PostsController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    if params[:main_photo_id].blank?
-      @main_photo = MainPhoto.new
-      flash.now[:error] = '未上传封面'
+    @main_photo = MainPhoto.where(id: params[:main_photo_id]).first
+    if check_main_photo_validate(@main_photo)
+      flash.now[:error] = '封面无效, 请重新上传'
       render :new
       return
     end
-    @main_photo = MainPhoto.find(params[:main_photo_id])
+
     if @article.save
       @main_photo.update(article_id: @article.id)
       redirect_to @article
@@ -64,6 +66,14 @@ class Admin::PostsController < ApplicationController
   end
 
   private
+  def check_main_photo_multiple(before_photo, after_photo)
+    before_photo.id != after_photo.id
+  end
+
+  def check_main_photo_validate(photo)
+    photo.blank? || photo.article.present?
+  end
+
   def article_params
     params.require(:article).permit(:title, :content)
   end

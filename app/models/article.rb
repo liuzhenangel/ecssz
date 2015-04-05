@@ -9,6 +9,10 @@ class Article < ActiveRecord::Base
     self.likes.size
   end
 
+  def data_time
+    self.created_at.strftime("%Y-%m-%d %H:%M")
+  end
+
   def to_html
     self.content = Markdown.new(content).to_html
     self

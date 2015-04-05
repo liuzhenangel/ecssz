@@ -1,18 +1,16 @@
 <div class='home-img'>
   <%= image_tag('home.jpg', width: '100%', height: '1280px') %>
 </div>
-<% 3.times do | i | %>
-  <ul class='rig columns-3'>
-    <% 3.times do |j| %>
-      <li class='border'>
-        <div class='boxshaddow'>
-          <%= image_tag('1.jpg', class: 'rig-img') %>
-        </div>
-        <div class='article-wrapper'>
-          <a class='article-title'>title of article</a>
-          <p class='article-data'>data of article</p>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<ul class='rig columns-3'>
+  <% @articles.each do |article| %>
+    <li class='border'>
+      <div class='boxshaddow'>
+        <%= image_tag(article.main_photo.image.url, class: 'rig-img') %>
+      </div>
+      <div class='article-wrapper'>
+        <%= link_to article.title, article, class: 'article-title' %>
+        <p class='article-data'><%= article.data_time %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>

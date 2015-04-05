@@ -1,12 +1,15 @@
 <div class='container'>
-  <% @articles.each do |article| %>
-    <p>
-  <div class="col-md-4"><%= link_to article.title, article %></div>
-  <div class="col-md-2"><%= article.created_at.to_date %></div>
-   <div class="col-md-1">喜欢(<%= article.liked_count %>)</div>
-   <div class="col-md-1"><%= link_to "评论", admin_comments_path(article_id: article.id) %></div>
-   <div class="col-md-1"><%= link_to "编辑", edit_admin_post_path(article) %></div>
-    <div class="col-md-1"><%= link_to "删除", admin_post_path(article), method: :delete, data: { confirm: "确认删除?" } %></div>
-  </p>
-<% end %>
+  <h3>所有文章</h3>
+  <table class="table">
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.title, article %></td>
+        <td><%= article.data_time %></td>
+        <td>喜欢(<%= article.liked_count %>)</td>
+        <td><%= link_to "评论", admin_comments_path(article_id: article.id) %></td>
+        <td><%= link_to "编辑", edit_admin_post_path(article) %></td>
+        <td><%= link_to "删除", admin_post_path(article), method: :delete, data: { confirm: "确认删除?" } %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>

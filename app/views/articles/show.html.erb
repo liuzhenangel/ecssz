@@ -44,22 +44,20 @@ var jiathis_config = {data_track_clickback:'true'};
   <% end %>
   </div>
   <div class='form-group'>
+    <% if @comments.present? %>
+      <div class='comment-diag'>
+      </div>
+    <% end %>
     <% @comments.each_with_index do |comment, index| %>
-      <% if index == 0 %>
-        <div class='comment-diag'>
-      <% end %>
-        <div class='comment-wrapper'>
-          <p class='name'>
-            <%= comment.username %>  •
-            <span class='created-at'><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></span>
-          </p>
-          <p class='comment-content'>
-            <%= comment.message %>
-          </p>
-        </div>
-      <% if index == 0 %>
-        </div>
-      <% end %>
+      <div class='comment-wrapper'>
+        <p class='name'>
+          <%= comment.username %>  •
+          <span class='created-at'><%= comment.data_time %></span>
+        </p>
+        <p class='comment-content'>
+          <%= comment.message %>
+        </p>
+      </div>
     <% end %>
   </div>
 </div>

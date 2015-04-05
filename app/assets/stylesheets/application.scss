@@ -1,12 +1,14 @@
 @import 'variables';
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@import 'admin/posts';
+@import 'admin_template';
+@import 'articles';
+@import 'footer';
+@import 'like';
 @import 'template';
 @import 'w_index';
-@import 'admin_template';
-@import 'admin/posts';
-@import 'articles';
-@import 'like';
 
 @import 'jquery.tiles.min';
 @import 'nprogress';

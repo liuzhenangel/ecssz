@@ -9,6 +9,10 @@
 
 
 // show html
+h3 {
+  text-align: center;
+}
+
 .btn-like{
   text-align: center;
 }
@@ -24,6 +28,7 @@
   font-size: 16px;
 }
 
+// 评论框
 .form-comment{
   width: 40%;
 }
@@ -31,35 +36,33 @@
 .create-comment{
   margin-top: 20px;
 }
+// end 评论框
 
+// 评论展示
 .comment-wrapper {
+  padding-top: 10px;
   margin-bottom: 0.5rem;
-}
-
-.comment-wrapper .comment-content {
-  word-wrap: break-word;
-  color: #000000;
-  white-space: pre-wrap;
-  word-break: break-all;
 }
 
 .comment-diag {
   color: #EBEBEB;
-  border-top: 1px solid #5E5E5E;
+  border-top: 1px solid #DDDDDD;
   padding-top: 1rem;
 }
 .comment-content {
-  padding-bottom: 2.275rem;
-  padding-left: 0.275rem;
-  border-bottom: 1px dashed #8a8a8a;
-  margin-bottom: 0;
-  white-space: pre;
-}
-
-.comment-diag .created-at {
-  color: #b3b3b3;
-}
-.comment-wrapper .name {
+  border-bottom: 1px dashed #DDDDDD;
+  padding-top: 10px;
+  padding-bottom: 20px;
   color: #000000;
 }
+
+.created-at {
+  color: #b3b3b3;
+}
+
+.comment-wrapper .name {
+  color: #302525;
+}
+// end 评论
+
 // end show

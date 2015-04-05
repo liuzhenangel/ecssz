@@ -2,6 +2,10 @@
   display: inline-block;
 }
 
+.container{
+  min-height: 600px;
+}
+
 .social {
   position: fixed;
   top: 50%;
@@ -23,20 +27,6 @@
 .disktop-name{
   color: #000;
   font-size: 14px;
-}
-
-.page-footer{
-  border-top: 1px solid #dddddd;
-  padding: 1rem 3rem 2rem;
-  text-align: right;
-}
-
-.page-footer .link {
-  margin-right: 1rem;
-}
-
-.page-footer .license {
-  margin-top: 1rem;
 }
 
 .disktop-nav li {

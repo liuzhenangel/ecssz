@@ -5,6 +5,9 @@ class Article < ActiveRecord::Base
 
   validates :title, :content, presence: true
 
+  paginates_per 2
+  max_paginates_per 10
+
   def liked_count
     self.likes.size
   end

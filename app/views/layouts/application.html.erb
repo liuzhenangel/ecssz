@@ -8,27 +8,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class='disktop-div'>
-  <nav class='disktop-nav'>
-    <ul class='nav nav-pills nav-justified'>
-      <li class='charity-logo'>
-        <div class="search-field">
-          <a href='#' class='search-pic'><%= image_tag('search.gif', class: 'search') %></a>
-          LOGO
-        </div>
-      </li>
-      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>关于我们</h6></a></li>
-      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>我们的团队</h6></a></li>
-      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>我们的历史</h6></a></li>
-      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>媒体</h6></a></li>
-      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>加入我们</h6></a></li>
-      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>ASK ME ANYTHING</h6></a></li>
-      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>ARCHIVE</h6></a></li>
-      <li data-id='0' pagina='0'><a href='#'><h6 class='disktop-name'>关于网站</h6></a></li>
-    </ul>
+  <div class='container home-container'>
+    <div class='logo'>
+      <h1>EXPLORE CREATE SHARE</h1>
+    </div>
+    <a class='next-btn' href='#home'><%= image_tag('next-btn.png') %></a>
+  </div>
+  <nav class="navbar navbar-default template-navbar">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav home-title">
+        <li><a name='home'></a></li>
+        <li><%= link_to '主页' %></li>
+        <li><%= link_to '所有' %></li>
+        <li><%= link_to '关于' %></li>
+        <li><%= link_to '团队' %></li>
+        <li><%= link_to '历史' %></li>
+        <li><%= link_to '媒体' %></li>
+        <li><%= link_to '加入' %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><span class="glyphicon glyphicon-search search" aria-hidden="true"></span></li>
+      </ul>
+    </div>
   </nav>
-</div>
-<%= yield %>
-<%= render 'layouts/footer' %>
+  <div class='home-index container'>
+    <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
 </body>
 </html>

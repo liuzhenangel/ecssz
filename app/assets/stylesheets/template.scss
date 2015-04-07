@@ -1,41 +1,74 @@
+html, body {
+  background-color: #DEDEDE;
+  height: 100%;
+}
+
+.home-index {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 62.5rem;
+}
+
+.home-container {
+  background: image-url('background.jpg') no-repeat center center;
+  width: 100%;
+  height: 100%;
+}
+
+.template-navbar {
+  background-color: #DEDEDE;
+  border-color: #D2D2D2;
+}
+
 .search {
+  padding-right: 30px;
+  padding-top: 17px;
+}
+
+.home-title{
+  font-size: 1.5em;
+  font-family: serif;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+  color: #FFFFFF;
+  background-color: black;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #FFFFFF;
+  background-color: black;
+}
+
+.logo h1 {
   display: inline-block;
+  border: 6px solid #FFFFFF;
+  font-weight: bold;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  font-family: 'Gibson', sans-serif;
+  padding: 49px 100px;
+  background-color: rgba(232, 232, 232, 0.27);
+
+  @media (max-width: $screen-sm-min) {
+    font-size: 20px;
+    padding: 15px 30px;
+  }
 }
 
-.container{
-  min-height: 600px;
-}
-
-.social {
-  position: fixed;
-  top: 50%;
-  width: 55px;
-  right: 0;
-}
-
-.social .builtin-icons {
-}
-
-.search-pic {
-  padding-right: 15px;
-}
-
-.disktop-nav {
-  position: fixed;
-}
-
-.disktop-name{
-  color: #000;
-  font-size: 14px;
-}
-
-.disktop-nav li {
-  background-color: #E2E2E2;
-  opacity: 0.7;
+.logo {
+  margin-top: 18%;
   text-align: center;
-  border-top: 15px;
 }
 
-.disktop-div {
-  padding-bottom: 55px;
+.next-btn{
+  margin-top: 200px;
+  display: block;
+  text-align: center;
+  img {
+    display: inline;
+  }
 }

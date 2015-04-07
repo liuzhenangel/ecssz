@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-    @articles = Article.all.order(created_at: :desc).limit(8)
+    params[:page] = 1 if params[:page].blank?
+    @articles = Article.order(created_at: :desc).page params[:page]
   end
 
   def rss

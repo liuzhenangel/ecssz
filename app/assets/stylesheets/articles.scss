@@ -9,18 +9,40 @@
 
 
 // show html
-h3 {
-  text-align: center;
+.comments-warp{
+  background-color: #EBECEC;
+}
+
+.article-content{
+  background-color: #FCFCFC;
+}
+
+.btn-rounded{
+  padding: 6px 17px;
+  border-radius: 30px;
+  margin-right: 5px;
+}
+
+p > img {
+  min-width: 800px;
+  min-height: 500px;
+  width: 800px;
+  margin: auto;
 }
 
 .btn-like{
-  text-align: center;
+  text-align: left;
+}
+
+.share-btn{
+  float: right;
+  margin-top: -30px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .rina-title{
-  border-bottom: 1px solid #dddddd;
   padding: .5rem 0;
-  text-align: center;
 }
 
 .content.markdown {

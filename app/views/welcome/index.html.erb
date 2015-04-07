@@ -1,16 +1,16 @@
-<div class='home-img'>
-  <%= image_tag('home.jpg', width: '100%', height: '1280px') %>
-</div>
-<ul class='rig columns-3'>
+<div class='index-center'>
   <% @articles.each do |article| %>
-    <li class='border'>
-      <div class='boxshaddow'>
-        <%= image_tag(article.main_photo.image.url, class: 'rig-img') %>
+    <div class='article-wrapper'>
+      <h2 class='index-article-title'><%= article.title %></h2>
+      <p class='index-article-data'><%= article.data_time %></p>
+      <%= image_tag(article.main_photo.image.url, class: 'rig-img') %>
+      <p class='index-article-content'><%= article.content %></p>
+      <div class='index-read-all'>
+        <a href='#'>阅读全文
+          <span class='glyphicon glyphicon-chevron-right glyphicon-right' aria-hidden="true"></span>
+        </a>
       </div>
-      <div class='article-wrapper'>
-        <%= link_to article.title, article, class: 'article-title' %>
-        <p class='article-data'><%= article.data_time %></p>
-      </div>
-    </li>
+    </div>
   <% end %>
-</ul>
+  <%= paginate @articles %>
+</div>

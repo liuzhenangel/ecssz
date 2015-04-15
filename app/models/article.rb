@@ -5,15 +5,22 @@ class Article < ActiveRecord::Base
 
   validates :title, :content, presence: true
 
-  paginates_per 2
-  max_paginates_per 10
+  max_paginates_per 100
 
   def liked_count
     self.likes.size
   end
 
+  def comments_count
+    self.comments.size
+  end
+
   def data_time
     self.created_at.strftime("%Y-%m-%d %H:%M")
+  end
+
+  def data_time_cn
+    self.created_at.strftime("%m月%d号")
   end
 
   def to_html

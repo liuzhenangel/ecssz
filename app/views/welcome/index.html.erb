@@ -1,16 +1,18 @@
-<div class='index-center'>
-  <% @articles.each do |article| %>
-    <div class='article-wrapper'>
-      <h2 class='index-article-title'><%= article.title %></h2>
-      <p class='index-article-data'><%= article.data_time %></p>
-      <%= image_tag(article.main_photo.image.url, class: 'rig-img') %>
-      <p class='index-article-content'><%= article.content %></p>
-      <div class='index-read-all'>
-        <a href='#'>阅读全文
-          <span class='glyphicon glyphicon-chevron-right glyphicon-right' aria-hidden="true"></span>
-        </a>
+<div class='home-index container'>
+  <div class='index-center'>
+    <% @articles.each do |article| %>
+      <div class='article-wrapper'>
+        <h2 class='index-article-title'><%= article.title %></h2>
+        <p class='index-article-data'><%= article.data_time %></p>
+        <%= image_tag(article.main_photo.image.url, class: 'rig-img') %>
+        <p class='index-article-content'><%= article.content %></p>
+        <%= link_to article_path(article, anchor: "home"), class: 'read-all-link' do %>
+          <div class='index-read-all'>
+            阅读全文<span class='glyphicon glyphicon-chevron-right glyphicon-right' aria-hidden="true"></span>
+          </div>
+        <% end %>
       </div>
-    </div>
-  <% end %>
-  <%= paginate @articles %>
+    <% end %>
+    <%= render 'page/paginate' %>
+  </div>
 </div>

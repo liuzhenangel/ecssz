@@ -27,6 +27,10 @@ Rails.application.routes.draw do
 
   get '/blog/rss', to: 'welcome#rss'
   get '/about', to: 'welcome#about'
+  get '/team', to: 'welcome#team'
+  get '/history', to: 'welcome#history'
+  get '/contact', to: 'welcome#contact'
+  get '/press', to: 'welcome#press'
   get '/photo', to: 'welcome#photo'
   get '/all', to: 'articles#index'
   root 'welcome#index'

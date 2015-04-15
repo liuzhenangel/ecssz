@@ -1,8 +1,8 @@
-<div class='search-content'>
+<div class='search-content home-index container'>
   <%= render 'message/flash' %>
   <% @articles.each do |article| %>
-    <h2 class='search-title'><%= link_to sanitize(article.title), article %></h2>
+    <h2 class='search-title'><%= link_to sanitize(article.title), article_path(article, anchor: "home") %></h2>
     <div class='search-html'><%= sanitize article.content %></div>
   <% end %>
-  <%= will_paginate @articles %>
+  <%= render 'page/paginate' %>
 </div>

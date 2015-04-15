@@ -1,15 +1,11 @@
-// index html
-
-
-// end index
-
-
 // search html
 // end search
 
 
 // show html
 .comments-warp{
+  margin-top: 50px;
+  padding-top: 20px;
   background-color: #EBECEC;
 }
 
@@ -17,16 +13,41 @@
   background-color: #FCFCFC;
 }
 
-.btn-rounded{
-  padding: 6px 17px;
-  border-radius: 30px;
-  margin-right: 5px;
+.btn-like{
+  .btn.btn-rounded.btn-info {
+    padding: 6px 17px;
+    border-radius: 30px;
+    margin-right: 5px;
+    background-color: #FFF;
+    border-color: #CACACA;
+    color: #E77070;
+    &:focus {
+      outline: none;
+    }
+  }
+  .is_like_count {
+    padding-right: 4px;
+  }
+  .is_not_like_count {
+    padding-right: 4px;
+  }
+  .btn.btn-rounded.btn-danger {
+    padding: 6px 17px;
+    border-radius: 30px;
+    margin-right: 5px;
+    background-color: #2ED2D8;
+    border-color: #2ED2D8;
+    color: #FFF;
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 p > img {
-  min-width: 800px;
-  min-height: 500px;
-  width: 800px;
+  min-width: 650px;
+  height: 300px;
+  width: auto;
   margin: auto;
 }
 
@@ -62,28 +83,27 @@ p > img {
 
 // 评论展示
 .comment-wrapper {
-  padding-top: 10px;
-  margin-bottom: 0.5rem;
+  padding-top: 20px;
 }
 
 .comment-diag {
   color: #EBEBEB;
-  border-top: 1px solid #DDDDDD;
   padding-top: 1rem;
 }
 .comment-content {
-  border-bottom: 1px dashed #DDDDDD;
   padding-top: 10px;
   padding-bottom: 20px;
-  color: #000000;
+  margin-bottom: 0;
+  color: #8A8787;
 }
 
 .created-at {
   color: #b3b3b3;
+  font-size: 8px;
 }
 
 .comment-wrapper .name {
-  color: #302525;
+  color: #8A8787;
 }
 // end 评论
 

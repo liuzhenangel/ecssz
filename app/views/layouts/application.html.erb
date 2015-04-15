@@ -2,39 +2,52 @@
 <html>
 <head>
   <title>SZ EXPLORE CREATE SHARE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maxminium-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <div class='container home-container'>
-    <div class='logo'>
-      <h1>EXPLORE CREATE SHARE</h1>
+<body id='template-body'>
+  <div class='container home-container home-background-img'>
+    <div class='intro-heading'>
+      <div class='row'>
+        <div class='small-12 columns'>
+          <h1 class='logo'>EXPLORE CREATE SHARE</h1>
+          <a class='circle' href='#home'>
+            <span class='glyphicon glyphicon-menu-down' aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
     </div>
-    <a class='next-btn' href='#home'><%= image_tag('next-btn.png') %></a>
   </div>
   <nav class="navbar navbar-default template-navbar">
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav home-title">
-        <li><a name='home'></a></li>
-        <li><%= link_to '主页' %></li>
-        <li><%= link_to '所有' %></li>
-        <li><%= link_to '关于' %></li>
-        <li><%= link_to '团队' %></li>
-        <li><%= link_to '历史' %></li>
-        <li><%= link_to '媒体' %></li>
-        <li><%= link_to '加入' %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><span class="glyphicon glyphicon-search search" aria-hidden="true"></span></li>
-      </ul>
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse navbar-title" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav home-title">
+          <li><%= link_to '主页', '/#home', id: 'home' %></li>
+          <li><%= link_to '所有', '/all#home' %></li>
+          <li><%= link_to '关于', '/about#home' %></li>
+          <li class='home-title-li'><%= link_to '团队', '/team#home' %></li>
+          <li class='home-title-li'><%= link_to '历史', '/history#home' %></li>
+          <li class='home-title-li'><%= link_to '媒体', '/press#home' %></li>
+          <li class='home-title-li'><%= link_to '加入', '/contact#home' %></li>
+        </ul>
+        <ul class="nav navbar-nav nav-search">
+          <li class='nav-search-li hidden-xs'>
+          <%= form_for(:search, url: '/search#home', method: 'get',  html: { class: 'form-search'} ) do |f| %>
+              <span class="glyphicon glyphicon-search btn-search" aria-hidden="true"></span>
+              <div class='form-group'>
+                <input class='form-control' name='q' type='text' value placeholder='搜索'>
+              </div>
+              <span class='glyphicon glyphicon-remove btn-close' aria-hidden='true'></span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
-  <div class='home-index container'>
-    <%= yield %>
-  </div>
+  <%= yield %>
   <%= render 'layouts/footer' %>
 </body>
 </html>

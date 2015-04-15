@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  views:
+    pagination:
+      first: '上一页'
+      last: '最后页'
+      previous: '第一页'
+      next: '下一页'

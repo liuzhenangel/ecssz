@@ -5,16 +5,16 @@ class Admin::CommentsController < ApplicationController
     unless login?
       flash[:error] = '请先登录后再操作'
       redirect_to signin_path
-      return
     end
-    @article = Article.find(params[:article_id])
   end
 
   def index
+    @article = Article.find(params[:article_id])
     @comments = @article.comments.order(created_at: :desc)
   end
 
   def destroy
+    @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     if @comment.destroy
       flash[:notic] = '删除评论成功'

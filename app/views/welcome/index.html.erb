@@ -5,7 +5,7 @@
       <h2 class='index-article-title'><%= article.title %></h2>
       <p class='index-article-data'><%= article.data_time %></p>
       <div class='featured-image-bg' style="background: url('<%= article.main_photo.image_url %>') left center; background-size: 180% auto;"></div>
-      <p class='index-article-content'><%= article.truncate_content %></p>
+      <p class='index-article-content'><%= sanitize article.filter_content_image %></p>
       <%= link_to article_path(article), class: 'read-all-link' do %>
         <div class='index-read-all'>
           阅读全文<span class='glyphicon glyphicon-chevron-right glyphicon-right' aria-hidden="true"></span>

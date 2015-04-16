@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   def index
     params[:page] = 1 if params[:page].blank?
     @articles = Article.order(created_at: :desc).page(params[:page]).per(10)
-    flash[:notice] = '暂时没有数据' if @articles.blank?
+    flash.now[:notice] = '暂时没有数据' if @articles.blank?
   end
 
   def show

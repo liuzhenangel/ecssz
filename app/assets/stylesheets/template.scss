@@ -7,7 +7,7 @@ html, body {
 }
 
 #template-body .container{
-  height: 100%;
+  min-height: 100%;
 }
 
 .home-title {
@@ -24,7 +24,7 @@ html, body {
   background-size: cover;
   text-align: center;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: table;
 }
 

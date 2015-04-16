@@ -19,6 +19,9 @@
   &:hover{
     text-decoration: none;
     color: #767676;
+    .index-read-all {
+      background-color: rgba(228, 228, 228, 0.06);
+    }
   }
 }
 
@@ -26,22 +29,23 @@
   color: #656464;
 
 }
+.featured-image-bg{
+  height: 300px;
+}
 
 .index-article-data{
   color: #A9A6A6;
 }
 
 .index-article-content{
-  color: #A6A6A6;
+  color: #6E6E6E;
   padding-top: 10px;
+  font-size: 17px;
+  line-height: 1.8;
 }
 
 .glyphicon-right{
   float: right;
-}
-
-.home-title{
-  font-size: 18px;
 }
 
 .index-read-all{

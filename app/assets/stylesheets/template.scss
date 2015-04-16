@@ -6,6 +6,14 @@ html, body {
   line-height: 1.5;
 }
 
+.home-title {
+  @media (max-width: $screen-sm-min) {
+    display: inline-block;
+    font-size: 26px;
+  }
+  font-size: 20px;
+}
+
 .home-container {
   background-color: #7A7A7A;
   background: image-url('background.jpg') no-repeat bottom center scroll;
@@ -36,6 +44,23 @@ html, body {
   float: left;
 }
 
+.navbar-default .navbar-nav > li > a {
+  color: #515050;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+  color: #FFFFFF;
+  background-color: black;
+}
+
+.navbar-collapse {
+  border: none;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #FFFFFF;
+  background-color: black;
+}
 .home-background-img {
 
   .logo {
@@ -101,21 +126,21 @@ html, body {
     max-width: 62.5rem;
     min-height: 100%;
   }
+}
 
-  #home{
-    &:focus {
-      outline: none;
-      color: #777;
-      background-color: transparent;
-    }
-    &:visited {
-      color: #777;
-      background-color: black;
-    }
-    &:active, &:hover {
-      color: #fff;
-      background-color: black;
-    }
+#home{
+  &:focus {
+    outline: none;
+    color: #777;
+    background-color: transparent;
+  }
+  &:visited {
+    color: #777;
+    background-color: black;
+  }
+  &:active, &:hover {
+    color: #fff;
+    background-color: black;
   }
 }
 
@@ -152,17 +177,15 @@ html, body {
         height: 75px;
         display: inline;
       }
-      .home-title {
-        @media (max-width: $screen-sm-min) {
-          display: inline-block;
-        }
+      .nav-default-display-none{
+        display: none;
       }
       .nav-search {
         .hidden-xs {
           @media (max-width: $screen-sm-min) {
             display: inline-block !important;
             font-size: 20px;
-            bottom: 19px;
+            bottom: 16px;
             position: relative;
           }
         }
@@ -195,15 +218,6 @@ html, body {
   float: right;
 }
 
-.navbar-default .navbar-nav > li > a:focus {
-  color: #FFFFFF;
-  background-color: black;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-  color: #FFFFFF;
-  background-color: black;
-}
 .nav-search {
   .form-search{
     padding-top: 20px;

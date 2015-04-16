@@ -3,7 +3,8 @@ $(document).on 'ready, page:change', ->
     $('.form-control').css('width', 'auto')
     $('.form-control').css('border', '1px solid #DDD')
     $('.form-group').css('display', 'inline-block')
-    $('.nav.navbar-nav.home-title').css('display', 'none')
+    if screen.width <= 500 || $(document).width() <=500
+      $('.nav.navbar-nav.home-title').css('display', 'none')
     $('.btn-close').css('transform', 'none')
     $('.form-control').val(location.search.split('&q=')[1])
 
@@ -12,7 +13,9 @@ $(document).on 'ready, page:change', ->
     $('.form-control').css('border', '1px solid #DDD')
     $('.form-group').css('display', 'inline-block')
     $('.btn-close').css('transform', 'none')
-    $('.nav.navbar-nav.home-title').css('display', 'none')
+    if screen.width <= 500 || $(document).width() <= 500
+      $('.nav.navbar-nav.home-title').css('display', 'none')
+      $('.nav-default-display-none').css('display', 'none')
 
   $('.btn-close').click ->
     $('.form-control').css('width', '0')

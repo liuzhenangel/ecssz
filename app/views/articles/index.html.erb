@@ -1,12 +1,10 @@
-<div class='home-index container'>
-  <h2 class='all-info-title'>ESC 所有活动</h2>
-  <div class='all-info'>
-    <% @articles.each do |article| %>
-      <div class='all-info-article'>
-        <p class='all-info-time'><%= article.data_time_cn %></p>
-        <p class='all-info-name'><%= link_to article.title, article %></p>
-      </div>
-    <% end %>
-    <%= render 'page/paginate' %>
-  </div>
+<h2 class='all-info-title'>ESC 所有活动</h2>
+<div class='all-info'>
+  <% @articles.each do |article| %>
+    <div class='all-info-article'>
+      <p class='all-info-time'><%= article.data_time_cn %></p>
+      <p class='all-info-name'><%= link_to article.title, article %></p>
+    </div>
+  <% end %>
+  <%= render 'page/paginate' %>
 </div>

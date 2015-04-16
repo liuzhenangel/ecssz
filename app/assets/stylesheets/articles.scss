@@ -1,4 +1,21 @@
 // search html
+.search-content {
+  height: 100%;
+
+  em {
+    color: red;
+  }
+
+  .search-title > a {
+    font-size: 21px;
+    color: #3C3C3C;
+  }
+
+  .search-html {
+    font-size: 18px;
+    color: #7C7C7C;
+  }
+}
 // end search
 
 
@@ -45,10 +62,19 @@
 }
 
 p > img {
-  min-width: 650px;
-  height: 300px;
-  width: auto;
+  max-width: 720px;
+  width: 100%;
   margin: auto;
+  @media (max-width: $screen-sm-min) {
+    max-width: 290px;
+    width: 100%;
+    min-width: 290px;
+  }
+  @media (max-width: $screen-xs) {
+    max-width: 380px;
+    width: 100%;
+    min-width: 290px;
+  }
 }
 
 .btn-like{
@@ -68,7 +94,10 @@ p > img {
 
 .content.markdown {
   padding: 1.2rem 0;
+  line-height: 2.0;
   font-size: 16px;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 // 评论框

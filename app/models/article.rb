@@ -23,8 +23,11 @@ class Article < ActiveRecord::Base
     self.created_at.strftime("%m月%d号")
   end
 
-  def to_html
-    self.content = Markdown.new(content).to_html
-    self
+  def truncate_content
+    html = HTML_Truncator.truncate(content, 300, length_in_chars: true)
+  end
+
+  def markdown_html
+    Markdown.new(content).to_html
   end
 end

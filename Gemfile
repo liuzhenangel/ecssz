@@ -24,7 +24,7 @@ gem 'carrierwave'
 # 图片截取
 gem "mini_magick"
 # 截断html
-gem 'truncate_html'
+gem "html_truncator"
 # 分页
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
@@ -37,5 +37,6 @@ group :development, :test do
   gem 'pry'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'rspec-rails'
 end
 

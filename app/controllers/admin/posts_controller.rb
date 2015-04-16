@@ -30,7 +30,7 @@ class Admin::PostsController < ApplicationController
       @article.main_photo.destroy
       photo.update(article_id: @article.id)
     end
-    redirect_to @article.to_html
+    redirect_to @article
   end
 
   def new

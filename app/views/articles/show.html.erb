@@ -1,7 +1,7 @@
 <div class='home-index'>
   <h2 class='rina-title'><%= @article.title %></h2>
   <div class='content markdown'>
-    <%= sanitize @article.content %>
+    <%= sanitize @article.markdown_html %>
   </div>
   <div class='btn-like'>
      <%= hidden_field_tag 'article_id', @article.id %>
@@ -25,40 +25,4 @@
   </script>
   <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1396150363049965" charset="utf-8"></script>
   <!-- JiaThis Button END -->
-</div>
-
-<div class='comments-warp'>
-  <div class='create-comment home-index'>
-    <%= render 'message/flash' %>
-    <%= form_for @comment, url: comments_path(article_id: @article.id) do |f| %>
-      <div class='form-group'>
-        <%= f.text_area :message, rows: '3', class: 'form-control', placeholder: '留言...' %>
-      </div>
-      <div class='form-group'>
-        <%= f.text_field :username, value: cookies[:username], class: 'form-control form-comment', placeholder: '你的名字' %>
-      </div>
-      <div class='form-group'>
-        <%= f.text_field :email, value: cookies[:email], class: 'form-control form-comment', placeholder: '邮箱' %>
-      </div>
-      <div class='form-group'>
-        <%= f.submit '发表', class: 'btn btn-default btn-rounded' %>
-      </div>
-    <% end %>
-  </div>
-  <div class='form-group home-index'>
-    <% if @comments.present? %>
-      <div class='comment-diag'></div>
-    <% end %>
-    <% @comments.each_with_index do |comment, index| %>
-      <div class='comment-wrapper'>
-        <p class='name'>
-          <%= comment.username %>  •
-          <span class='created-at'><%= comment.data_time %></span>
-        </p>
-        <p class='comment-content'>
-          <%= comment.message %>
-        </p>
-      </div>
-    <% end %>
-  </div>
 </div>

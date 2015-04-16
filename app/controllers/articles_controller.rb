@@ -5,9 +5,10 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id]).to_html
+    @article = Article.find(params[:id])
     @comment = Comment.new
     @comments = @article.comments.order(created_at: :desc)
+    render :layout => 'show_articles'
   end
 
   def search
@@ -19,11 +20,6 @@ class ArticlesController < ApplicationController
 
     @articles.map do |a|
       a.title = a.title.gsub(params[:q].to_s, "<em>#{params[:q]}</em>")
-      unless a.content.include?('/uploads/photo/image')
-        a.content = a.content.gsub(params[:q].to_s, "<em>#{params[:q]}</em>")
-      end
-      htmlstring = TruncateHtml::HtmlString.new(a.to_html.content)
-      a.content = TruncateHtml::HtmlTruncator.new(htmlstring).truncate
     end
   end
 end

@@ -1,3 +1,16 @@
 .paginate {
   float: right;
+
+  .active > a {
+    z-index: 2;
+    color: white;
+    background-color: #B7BBBB;
+    border-color: #A6ADAC;
+    cursor: default;
+  }
+
+  a {
+    text-decoration: none;
+    color: #6B6969;
+  }
 }

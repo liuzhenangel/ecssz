@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default template-navbar">
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div id='home'></div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse navbar-title" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav home-title">
+        <li><%= link_to '主页', '/' %></li>
+        <li><%= link_to '所有', '/all' %></li>
+        <li><%= link_to '关于', '/about', class: 'home-title-about' %></li>
+        <li class='home-title-li'><%= link_to '团队', '/team' %></li>
+        <li class='home-title-li'><%= link_to '历史', '/history' %></li>
+        <li class='home-title-li'><%= link_to '媒体', '/press' %></li>
+        <li class='home-title-li'><%= link_to '加入', '/contact' %></li>
+      </ul>
+      <ul class="nav navbar-nav nav-search">
+        <li class='nav-search-li hidden-xs'>
+        <%= form_for(:search, url: '/search', method: 'get',  html: { class: 'form-search'} ) do |f| %>
+            <span class="glyphicon glyphicon-search btn-search" aria-hidden="true"></span>
+            <div class='form-group'>
+              <input class='form-control' name='q' type='text' value placeholder='搜索'>
+            </div>
+            <span class='glyphicon glyphicon-remove btn-close' aria-hidden='true'></span>
+          <% end %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav nav-default-display-none">
+        <li><%= link_to '关于', '/about'%></li>
+        <li><%= link_to '团队', '/team' %></li>
+        <li><%= link_to '历史', '/history' %></li>
+        <li><%= link_to '媒体', '/press' %></li>
+        <li><%= link_to '加入', '/contact' %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

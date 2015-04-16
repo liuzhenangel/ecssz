@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       flash.now[:error] = '添加评论失败'
       render 'articles/show'
     else
-      flash[:notic] = '添加评论成功'
+      flash[:notice] = '添加评论成功'
       redirect_to @article
     end
   end

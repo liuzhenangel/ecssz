@@ -1,4 +1,5 @@
 <div class='index-center'>
+  <%= render 'message/flash' %>
   <% @articles.each do |article| %>
     <div class='article-wrapper'>
       <h2 class='index-article-title'><%= article.title %></h2>

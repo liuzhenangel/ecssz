@@ -16,7 +16,7 @@ class Admin::SessionsController < ApplicationController
 
   def destroy
     session[:login] = false
-    flash[:notic] = '成功退出'
+    flash[:notice] = '成功退出'
     redirect_to signin_path
   end
 end

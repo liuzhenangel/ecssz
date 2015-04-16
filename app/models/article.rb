@@ -24,7 +24,13 @@ class Article < ActiveRecord::Base
   end
 
   def truncate_content
-    html = HTML_Truncator.truncate(content, 300, length_in_chars: true)
+    html = HTML_Truncator.truncate(content, 300, length_in_chars: true, keepImageTag: true)
+  end
+
+  def filter_content_image
+    markdown = markdown_html
+    content = markdown.gsub(/<img[^>]+>/, '')
+    content = HTML_Truncator.truncate(content, 300, length_in_chars: true)
   end
 
   def markdown_html

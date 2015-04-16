@@ -4,7 +4,7 @@
     <div class='article-wrapper'>
       <h2 class='index-article-title'><%= article.title %></h2>
       <p class='index-article-data'><%= article.data_time %></p>
-      <div class='featured-image-bg' style="background: url( <%= asset_path(article.main_photo.image_url) %> ) left center; background-size: 180% auto;"></div>
+      <div class='featured-image-bg' style="background: image_url( <%= asset_path(article.main_photo.image_url) %> ) left center; background-size: 180% auto;"></div>
       <p class='index-article-content'><%= article.truncate_content %></p>
       <%= link_to article_path(article), class: 'read-all-link' do %>
         <div class='index-read-all'>

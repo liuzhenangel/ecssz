@@ -1,12 +1,12 @@
-app_path = "/home/ruby/rina/current"
+app_path = "/home/deploy/ecssz/current"
 
 worker_processes   1
 preload_app        true
 timeout            180
-listen             '/tmp/unicorn_rina.sock'
-user               'ruby', 'ruby'
+listen             '/tmp/unicorn_ecssz.sock'
+user               'deploy', 'deploy'
 working_directory  app_path
-pid                "#{app_path}/tmp/pids/unicorn_rina.pid"
+pid                "#{app_path}/tmp/pids/unicorn_ecssz.pid"
 stderr_path        "log/unicorn.log"
 stdout_path        "log/unicorn.log"
 

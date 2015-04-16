@@ -4,15 +4,15 @@ require 'mina/git'
 # require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
-set :domain, 'yafeilee.me'
-set :deploy_to, '/home/ruby/rina'
-set :repository, 'git@github.com:liuzhenangel/Rina_Blog.git'
+set :domain, '104.236.254.139'
+set :deploy_to, '/home/deploy/ecssz'
+set :repository, 'git@github.com:liuzhenangel/ecssz.git'
 set :branch, 'master'
 set :app_path, "#{deploy_to}/#{current_path}"
 
 set :shared_paths, ['config/database.yml', 'config/application.yml', 'log', 'db/production.sqlite3', 'tmp']
 
-set :user, 'ruby'    # Username in the server to SSH to.
+set :user, 'deploy'    # Username in the server to SSH to.
 set :port, '22'     # SSH port number.
 set :forward_agent, true     # SSH forward_agent.
 
@@ -61,7 +61,7 @@ task :deploy => :environment do
 end
 
 namespace :unicorn do
-  set :unicorn_pid, "#{app_path}/tmp/pids/unicorn_rina.pid"
+  set :unicorn_pid, "#{app_path}/tmp/pids/unicorn_ecssz.pid"
   set :start_unicorn, %{
     cd #{app_path} && bundle exec unicorn -c config/unicorn/#{rails_env}.rb -E #{rails_env} -D
   }

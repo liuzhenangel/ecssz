@@ -194,7 +194,7 @@ html, body {
           }
         }
 
-        .form-control {
+        .form-control-search-input {
           @media (max-width: $screen-sm-min) {
             font-size: 15px;
           }
@@ -230,13 +230,13 @@ html, body {
     margin-right: 20px;
   }
 
-  .form-group {
+  .form-group-search-div{
     margin-bottom: 0;
     vertical-align: middle;
     display: none;
   }
 
-  .form-control {
+  .form-control-search-input {
     font-size: 12px;
     border: none;
     width: 0px;

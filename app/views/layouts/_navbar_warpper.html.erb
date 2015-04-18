@@ -16,8 +16,8 @@
         <li class='nav-search-li hidden-xs'>
         <%= form_for(:search, url: '/search', method: 'get',  html: { class: 'form-search'} ) do |f| %>
             <span class="glyphicon glyphicon-search btn-search" aria-hidden="true"></span>
-            <div class='form-group'>
-              <input class='form-control' name='q' type='text' value placeholder='搜索'>
+            <div class='form-group-search-div'>
+              <input class='form-control-search-input' name='q' type='text' value placeholder='搜索'>
             </div>
             <span class='glyphicon glyphicon-remove btn-close' aria-hidden='true'></span>
           <% end %>

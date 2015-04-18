@@ -2,7 +2,7 @@
   <%= render 'message/flash' %>
   <% @articles.each do |article| %>
     <h2 class='search-title'><%= link_to sanitize(article.title), article_path(article, anchor: "home") %></h2>
-    <div class='search-html'><%= sanitize article.truncate_content %></div>
+    <div class='search-html'><%= article.truncate_content %></div>
   <% end %>
   <%= render 'page/paginate' %>
 </div>

@@ -93,7 +93,7 @@ html, body {
     display: inline-block;
     border-radius: 50%;
     padding: 0.5rem 0;
-    margin-top: 13rem;
+    margin-top: 9rem;
     background-color: rgba(232, 232, 232, 0.27);
 
     &:hover, &:focus {
@@ -117,11 +117,6 @@ html, body {
     }
   }
 
-  .template-navbar{
-    border: none;
-
-  }
-
   .home-index.container {
     width: 100%;
     margin-left: auto;
@@ -131,6 +126,10 @@ html, body {
     max-width: 62.5rem;
     min-height: 100%;
   }
+}
+
+.navbar.navbar-default.template-navbar{
+  border: none !important;
 }
 
 #home{

@@ -30,6 +30,10 @@ class Article < ActiveRecord::Base
   def filter_content_image
     markdown = markdown_html
     content = markdown.gsub(/<img[^>]+>/, '')
+  end
+
+  def filter_content_image_to_markdown
+    content = filter_content_image
     content = HTML_Truncator.truncate(content, 300, length_in_chars: true)
   end
 

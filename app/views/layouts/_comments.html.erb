@@ -2,22 +2,7 @@
   <div class='create-comment'>
     <div class='container'>
       <div class='row'>
-        <%= render 'message/flash' %>
-        <%= form_for @comment, url: comments_path(article_id: @article.id) do |f| %>
-          <div class='form-group'>
-            <%= f.text_area :message, rows: '3', class: 'form-control', placeholder: '留言...' %>
-          </div>
-          <div class='form-group'>
-            <%= f.text_field :username, value: cookies[:username], class: 'form-control form-comment', placeholder: '你的名字' %>
-          </div>
-          <div class='form-group'>
-            <%= f.text_field :email, value: cookies[:email], class: 'form-control form-comment', placeholder: '邮箱' %>
-          </div>
-          <div class='form-group'>
-            <%= f.submit '发表', class: 'btn btn-default btn-rounded' %>
-          </div>
-        <% end %>
-        <div class='form-group'>
+        <div class='form-group', id='comments_form_group'>
           <% @comments.each_with_index do |comment, index| %>
               <p class='name'>
                 <%= comment.username %>  •
@@ -28,6 +13,21 @@
               </p>
           <% end %>
         </div>
+        <div id='flash_message'></div>
+        <%= form_for Comment.new, url: comments_path(article_id: @article.id), remote: true do |f| %>
+          <div class='form-group'>
+            <%= f.text_area :message, rows: '3', class: 'form-control', placeholder: '留言...' %>
+          </div>
+          <div class='form-group'>
+            <%= f.text_field :username, value: cookies[:username], class: 'form-control form-comment', placeholder: '你的名字' %>
+          </div>
+          <div class='form-group'>
+            <%= f.text_field :email, value: cookies[:email], class: 'form-control form-comment', placeholder: '邮箱' %>
+          </div>
+          <div class='form-group'>
+            <%= f.submit '发表', class: 'btn btn-default btn-rounded', id: 'form-comment_submit' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

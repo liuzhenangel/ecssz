@@ -1,0 +1,11 @@
+flash_message = '<%= escape_javascript(render("message/flash")) %>';
+$("#flash_message").append(flash_message);
+<% if @success %>
+  comment_line = '<%= escape_javascript(render("comment", :item => @comment)) %>';
+  $("#comments_form_group").append(comment_line);
+  $(comment_line).fadeOut("fast");
+  $('#comment_message').val('')
+  $("textarea", "#new_comment").val("").focus();
+<% else %>
+  $("textarea", "#new_comment").focus();
+<% end %>

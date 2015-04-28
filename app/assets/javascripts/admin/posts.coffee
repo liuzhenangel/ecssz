@@ -31,9 +31,10 @@ $(document).on 'ready, page:change', ->
       txtBox.caret('pos',caret_pos + src_merged.length)
       txtBox.focus()
 
+  $('.file-window').fileUpload op
+
   $('#upload-photo').click ->
     $(".file-window").show().focus().click().hide()
-    $('.file-window').fileUpload op
     false
 
   opt =
@@ -46,7 +47,8 @@ $(document).on 'ready, page:change', ->
         $('.show-main-photo').attr('src', data['img'])
       $('#main_photo_id').val(data['photo_id'])
 
+  $('.file-main-photo').fileUpload opt
+
   $('#upload-main-photo').click ->
     $(".file-main-photo").show().focus().click().hide()
-    $('.file-main-photo').fileUpload opt
     false

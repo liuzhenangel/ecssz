@@ -9,7 +9,7 @@ html, body {
 .home-title {
   @media (max-width: $screen-sm-min) {
     display: inline-block;
-    font-size: 26px;
+    font-size: 22px;
   }
   font-size: 20px;
 }
@@ -71,7 +71,7 @@ html, body {
     color: #FFFFFF;
     letter-spacing: 2px;
     font-family: 'Gibson', sans-serif;
-    padding: 49px 100px;
+    padding: 49px 50px;
     background-color: rgba(232, 232, 232, 0.27);
 
     @media (max-width: $screen-sm-min) {
@@ -91,9 +91,6 @@ html, body {
     padding: 0.5rem 0;
     margin-top: 9rem;
     background-color: rgba(232, 232, 232, 0.27);
-    span {
-      top: 7px;
-    }
 
     &:hover, &:focus {
       color: #E5E5E5;
@@ -114,7 +111,7 @@ html, body {
         background-color: rgba(232, 232, 232, 0.4);
       }
       span {
-        top: 1px;
+        top: -2px;
       }
     }
   }
@@ -222,7 +219,6 @@ html, body {
 
 .nav-search {
   float: right;
-  cursor: pointer;
   height: 59px;
 }
 
@@ -255,13 +251,19 @@ html, body {
 .btn-search {
   display: inline-block;
   top: 5px;
+  cursor: pointer;
+  @media (min-width: $screen-sm-min) {
+    &.open {
+      top: 1px;
+    }
+  }
 }
 
 .btn-close {
   display: inline-block;
   position: absolute;
   font-size: 12px;
-  top: 28px;
+  top: 30px;
   right: 25px;
   cursor: pointer;
   -webkit-transform: scale(0, 0);

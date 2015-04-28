@@ -2,7 +2,7 @@
   <%= render 'message/flash' %>
   <% @articles.each do |article| %>
     <div class='article-wrapper'>
-      <h2 class='index-article-title'><%= article.title %></h2>
+      <h2 class='index-article-title'><%= link_to article.title, article %></h2>
       <p class='index-article-data'><%= article.data_time %></p>
       <div class='featured-image-bg' style="background: url('<%= article.main_photo.image_url %>') left center; background-size: 180% auto;"></div>
       <p class='index-article-content'><%= sanitize article.filter_content_image_to_markdown %></p>

@@ -18,3 +18,21 @@
 @import 'jquery.tiles.min';
 @import 'nprogress';
 @import 'nprogress-bootstrap';
+
+.jiathis_style_24x24 {
+  margin-top: 6px;
+  a {
+    border: none;
+  }
+}
+
+.jiathis_style {
+  a {
+    border: none;
+  }
+}
+
+iframe+.jiathis_style > div {
+  width: auto !important;
+}
+

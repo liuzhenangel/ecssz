@@ -6,10 +6,6 @@ html, body {
   line-height: 1.5;
 }
 
-#template-body .container{
-  min-height: 100%;
-}
-
 .home-title {
   @media (max-width: $screen-sm-min) {
     display: inline-block;

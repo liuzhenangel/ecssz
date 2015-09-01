@@ -24,6 +24,21 @@ html, body {
   display: table;
 }
 
+.home-background-img1 {
+  background: image-url('bg11.jpg') no-repeat bottom center scroll;
+  background-size: cover;
+}
+
+.home-background-img2 {
+  background: image-url('bg22.jpg') no-repeat bottom center scroll;
+  background-size: cover;
+}
+
+.home-background-img3 {
+  background: image-url('bg33.jpg') no-repeat bottom center scroll;
+  background-size: cover;
+}
+
 .row{
   width: 100%;
   margin-left: auto;

@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
   end
 
   def data_time
-    self.created_at.strftime("%Y-%m-%d %H:%M")
+    self.created_at.strftime("%Y-%m-%d")
   end
 
   def data_time_cn
